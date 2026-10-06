@@ -1,6 +1,9 @@
 # ADS-B to TAK Server Guide
 
-This guide documents the working configuration of tak-sns01, a Raspberry Pi 3B sensor node that receives 1090 MHz ADS-B transmissions with an RTL-SDR, decodes aircraft data with dump1090-fa, converts fresh positioned aircraft into Cursor-on-Target (CoT) XML, and publishes those tracks to TAK Server over mutually authenticated TLS.
+This guide provides thworking configuration to build a sensor node that receives 1090 MHz ADS-B aircraft transmissions, enriches them with metadata, and forwards them as Cursor-on-Target (CoT) data to a TAK Server.
+
+The system uses a Raspberry Pi 3B, an RTL-SDR Blog V3, and a Python script to create a real-time, enriched air picture.
+
 
 ---
 
