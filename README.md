@@ -12,7 +12,7 @@ Please follow the steps in order. Each section is organized as a separate "tab" 
 
 | **Tab** | **Description** |
 |:---|:---|
-| **[Step 1: Initial System Setup](./1-intial-setup.md)** | Prepare the hardware and install the RTL-SDR software required to decode 1090 MHz aircraft signals. |
+| **[Step 1: Initial System Setup](./1-system-setup.md)** | Prepare the hardware and install the RTL-SDR software required to decode 1090 MHz aircraft signals. |
 | **[Step 2: Network Configuration](./2-network-config.md)** | Configure the ZeroTier VPN and set up persistent host resolution to securely connect your node to the TAK Server. |
 | **[Step 3: Application Setup](./3-application-setup.md)** | Establish the Python environment, install the aircraft metadata database, and configure mutual TLS certificates. |
 | **[Step 4: Deployment & Validation](./4-deployment-validation.md)** | Perform end-to-end syntax and integration tests, then configure the gateway to run as a persistent system service. |
