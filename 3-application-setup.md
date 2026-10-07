@@ -77,7 +77,7 @@ For secure communication, the application uses a client TLS certificate to authe
 Before proceeding, it is crucial to test that the entire TLS chain is working correctly using `openssl`. This command validates the network path, server-side firewall rules, the server's certificate, and the client certificate you just installed.
 
 Execute the following command from your `tak-sns01` terminal:
-```
+```bash
 openssl s_client \
   -connect takserver-01:8089 \
   -servername takserver-01 \
@@ -94,17 +94,17 @@ openssl s_client \
 The `adsb2tak.key` file is encrypted and requires a passphrase, which prevents the application from starting automatically. We will now create a decrypted version of this key for unattended use by the system service.
 
 1.  Navigate to the Certs Directory:
-    ```
+    ```bash
     cd ~/adsb2tak/certs
     ```
 2.  Create the Decrypted Key:
     You will be prompted for the passphrase of the original `adsb2tak.key` one last time.
-    ```
+    ```bash
     openssl pkey -in adsb2tak.key -out adsb2tak-service.key
     ```
 3.  Secure the New Service Key:
     This unencrypted key is sensitive and must be protected.
-    ```
+    ```bash
     chmod 600 adsb2tak-service.key
     ```
     > The Python application will be configured to use this `adsb2tak-service.key` file.
