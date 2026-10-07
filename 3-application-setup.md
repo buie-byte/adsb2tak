@@ -87,10 +87,10 @@ openssl s_client \
   -verify_hostname takserver-01
 ```
 
-> CRITICAL
-A successful test will display a large amount of certificate information and must end with the line: Verify return code: 0 (ok). If you get any other result, resolve the TLS or networking issue before proceeding.
+>⚠︎ CRITICAL
+><br>A successful test will display a large amount of certificate information and must end with the line: Verify return code: 0 (ok). If you get any other result, resolve the TLS or networking issue before proceeding.
 
-## Create the Service-Only Private Key
+## 3.4 Create the Service-Only Private Key
 The `adsb2tak.key` file is encrypted and requires a passphrase, which prevents the application from starting automatically. We will now create a decrypted version of this key for unattended use by the system service.
 
 1.  Navigate to the Certs Directory:
