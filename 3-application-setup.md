@@ -131,7 +131,7 @@ ls -lh
 # Test the archive integrity (no output means success)
 gzip -t aircraft.csv.gz
 ```
-## Next Step
+### Next Step
 <br>The application environment, certificates, and data are now in place. You are ready to deploy and validate the service.
 
 ➡️ Step 4: Deployment & Validation
