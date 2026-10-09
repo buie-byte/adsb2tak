@@ -21,14 +21,14 @@ We will create a dedicated directory and a Python virtual environment to isolate
     ```
 
 3.  **Activate the Environment:**
-    You must activate the environment in your terminal session before installing packages or running the script.
+    <br> You must activate the environment in your terminal session before installing packages or running the script.
     ```bash
     source .venv/bin/activate
     ```
     *Your command prompt should now be prefixed with `(.venv)`.*
 
 4.  **Verify the Python Version:**
-    Confirm that you are using the Python interpreter from within the virtual environment.
+    <br> Confirm that you are using the Python interpreter from within the virtual environment.
     ```bash
     which python
     ```
@@ -56,16 +56,16 @@ The final directory layout for the application will be:
 For secure communication, the application uses a client TLS certificate to authenticate with the TAK Server.
 
 1.  **Issue the Certificate:**
-    Using your existing TAK Certificate Authority (CA), issue a dedicated **client certificate** named `adsb2tak`.
+    <br>Using your existing TAK Certificate Authority (CA), issue a dedicated **client certificate** named `adsb2tak`.
 
 2.  **Transfer and Organize Certificate Files:**
-    Transfer the three required files to your Raspberry Pi and place them in the `~/adsb2tak/certs/` directory. The required files are:
+    <br>Transfer the three required files to your Raspberry Pi and place them in the `~/adsb2tak/certs/` directory. The required files are:
     *   `adsb2tak.pem`: The client certificate and its chain.
     *   `adsb2tak.key`: The encrypted private key for the certificate.
     *   `adsb2tak-trusted.pem`: The trusted CA chain for verifying the server.
 
 3.  **Secure the Private Key:**
-    Set the file permissions on the private key so that only the owner can read it. This is a critical security step.
+    <br>Set the file permissions on the private key so that only the owner can read it. This is a critical security step.
     ```bash
     chmod 600 ~/adsb2tak/certs/adsb2tak.key
     ```
@@ -88,23 +88,52 @@ openssl s_client \
 ```
 
 >⚠︎ CRITICAL
-><br>A successful test will display a large amount of certificate information and must end with the line: Verify return code: 0 (ok). If you get any other result, resolve the TLS or networking issue before proceeding.
+><br>A successful test will display a large amount of certificate information and must end with the line: `Verify return code: 0 (ok)`. If you get any other result, resolve the TLS or networking issue before proceeding.
 
 ## 3.4 Create the Service-Only Private Key
-The `adsb2tak.key` file is encrypted and requires a passphrase, which prevents the application from starting automatically. We will now create a decrypted version of this key for unattended use by the system service.
+<br>The `adsb2tak.key` file is encrypted and requires a passphrase, which prevents the application from starting automatically. We will now create a decrypted version of this key for unattended use by the system service.
 
 1.  Navigate to the Certs Directory:
     ```bash
     cd ~/adsb2tak/certs
     ```
 2.  Create the Decrypted Key:
-    You will be prompted for the passphrase of the original `adsb2tak.key` one last time.
+    <br>You will be prompted for the passphrase of the original `adsb2tak.key` one last time.
     ```bash
     openssl pkey -in adsb2tak.key -out adsb2tak-service.key
     ```
 3.  Secure the New Service Key:
-    This unencrypted key is sensitive and must be protected.
+    <br>This unencrypted key is sensitive and must be protected.
     ```bash
     chmod 600 adsb2tak-service.key
     ```
     > The Python application will be configured to use this `adsb2tak-service.key` file.
+
+## 3.5 Install the Aircraft Metadata Database
+<br>This database is used to enrich raw ADS-B data with details like aircraft type, operator, and military/civilian status.
+
+1. Navigate to the Database Directory:
+
+```bash
+cd ~/adsb2tak/database
+```
+2. Download the Database File:
+```bash
+wget -O aircraft.csv.gz https://github.com/wiedehopf/tar1090-db/raw/refs/heads/csv/aircraft.csv.gz
+```
+
+3. Verify the Download:
+<br>Run these commands to ensure the file was downloaded correctly and is not corrupt.
+```bash
+# Check that the file has a non-zero size
+ls -lh
+
+# Test the archive integrity (no output means success)
+gzip -t aircraft.csv.gz
+```
+## Next Step
+<br>The application environment, certificates, and data are now in place. You are ready to deploy and validate the service.
+
+➡️ Step 4: Deployment & Validation
+
+    
