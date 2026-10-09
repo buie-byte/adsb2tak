@@ -152,4 +152,4 @@ Follow these steps to safely update the `adsb2tak.py` script while minimizing do
 
 You have now completed all the steps for setting up, deploying, and maintaining your `tak-sns01` ADS-B sensor node.
 
-⬅️ **[Return to Main README](../README.md)**
+⬅️ **[Return to Main README](./README.md)**
