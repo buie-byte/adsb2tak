@@ -1,6 +1,6 @@
 # Step 5: Operations Guide
 
-This guide provides instructions for the "day-two" operation of your `tak-sns01` node. It covers how to monitor the service, perform quick health checks, troubleshoot common issues, and safely update the application script.
+This guide provides instructions for the operation of your `tak-sns01` node. It covers how to monitor the service, perform quick health checks, troubleshoot common issues, and safely update the application script.
 
 ---
 
