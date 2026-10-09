@@ -135,5 +135,6 @@ gzip -t aircraft.csv.gz
 <br>The application environment, certificates, and data are now in place. You are ready to deploy and validate the service.
 
 ➡️ Step 4: Deployment & Validation
+➡️ **[Step 4: Deployment & Validation](./docs/4-deployment-validation.md)**
 
     
