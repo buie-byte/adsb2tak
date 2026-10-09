@@ -163,4 +163,4 @@ The final test is to reboot the system and confirm that the service starts autom
 
 Your sensor node is now deployed. The final step is to understand how to monitor, troubleshoot, and maintain it during normal operations.
 
-➡️ **[Step 5: Operations Guide](./docs/5-Operations-Guide.md)**
+➡️ **[Step 5: Operations Guide](./5-operations-guide.md)**
