@@ -112,4 +112,4 @@ Finally, install the `dump1090-fa` software from FlightAware, which is responsib
 
 The foundational system is now prepared. You are ready to proceed with networking configuration.
 
-➡️ **[Step 2: Network Configuration](./2-Network-Config.md)**
+➡️ **[Step 2: Network Configuration](./2-network-config.md)**
