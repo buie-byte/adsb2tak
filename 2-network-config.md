@@ -101,4 +101,4 @@ For TLS security to work correctly, the Python application will verify the serve
 
 Your network configuration is now complete and verified. You are ready to set up the Python application itself.
 
-➡️ **[Step 3: Application Setup](./docs/3-application-setup.md)**
+➡️ **[Step 3: Application Setup](./3-application-setup.md)**
