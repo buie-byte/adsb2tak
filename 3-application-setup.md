@@ -90,6 +90,8 @@ openssl s_client \
 >⚠︎ CRITICAL
 ><br>A successful test will display a large amount of certificate information and must end with the line: `Verify return code: 0 (ok)`. If you get any other result, resolve the TLS or networking issue before proceeding.
 
+---
+
 ## 3.4 Create the Service-Only Private Key
 <br>The `adsb2tak.key` file is encrypted and requires a passphrase, which prevents the application from starting automatically. We will now create a decrypted version of this key for unattended use by the system service.
 
@@ -108,7 +110,7 @@ openssl s_client \
     chmod 600 adsb2tak-service.key
     ```
     > The Python application will be configured to use this `adsb2tak-service.key` file.
-
+---
 ## 3.5 Install the Aircraft Metadata Database
 <br>This database is used to enrich raw ADS-B data with details like aircraft type, operator, and military/civilian status.
 
@@ -131,10 +133,10 @@ ls -lh
 # Test the archive integrity (no output means success)
 gzip -t aircraft.csv.gz
 ```
+---
 ### Next Step
 <br>The application environment, certificates, and data are now in place. You are ready to deploy and validate the service.
 
-➡️ Step 4: Deployment & Validation
 ➡️ **[Step 4: Deployment & Validation](./docs/4-deployment-validation.md)**
 
     
