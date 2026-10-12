@@ -112,8 +112,10 @@ openssl s_client \
     > The Python application will be configured to use this `adsb2tak-service.key` file.
 ---
 ## 3.5 ADSB2TAK Python Application
-<br>
+<br> Create `adsb2tak.py`. The working application performs four core tasks: read aircraft.json, filter for fresh positioned aircraft, construct CoT, and send the CoT over a persistent TLS socket.
+
 ---
+
 ## 3.6 Install the Aircraft Metadata Database
 <br>This database is used to enrich raw ADS-B data with details like aircraft type, operator, and military/civilian status.
 
