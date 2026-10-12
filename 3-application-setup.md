@@ -517,7 +517,7 @@ if __name__ == "__main__":
     main()
 ```
 
-Save the file and exit (Ctrl+X, then Y, then Enter).
+Save the file and exit (`Ctrl+X`, then `Y`, then `Enter`).
 
 ---
 
