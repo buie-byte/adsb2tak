@@ -112,14 +112,15 @@ openssl s_client \
     > The Python application will be configured to use this `adsb2tak-service.key` file.
 ---
 ## 3.5 ADSB2TAK Python Application
-<br> Create `adsb2tak.py`. The working application performs six core tasks: continuously read aircraft data from `aircraft.json`, filter for aircraft with valid and recently updated positions, convert aircraft information into Cursor-on-Target (CoT) events, securely transmit CoT messages to TAK Server over a persistent TLS connection, automatically reconnect if the connection is lost, and refresh aircraft positions approximately every two seconds to provide near-real-time tracking in WebTAK. The application also maintains consistent aircraft identifiers, preventing duplicate markers, and assigns expiration timestamps to CoT events to manage aircraft visibility when updates are no longer received.
+<br> he working application performs six core tasks: continuously read aircraft data from `aircraft.json`, filter for aircraft with valid and recently updated positions, convert aircraft information into Cursor-on-Target (CoT) events, securely transmit CoT messages to TAK Server over a persistent TLS connection, automatically reconnect if the connection is lost, and refresh aircraft positions approximately every two seconds to provide near-real-time tracking in WebTAK. The application also maintains consistent aircraft identifiers, preventing duplicate markers, and assigns expiration timestamps to CoT events to manage aircraft visibility when updates are no longer received.
 
+Create the `adsb2tak.py`file:
 ```bash
 sudo nano ~/adsb2tak/adsb2tak.py
 ```
 Copy and paste this output into `adsb2tak.py`.
 
-```bash
+```
 #!/usr/bin/env python3
 
 import json
