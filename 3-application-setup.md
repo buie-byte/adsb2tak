@@ -111,7 +111,10 @@ openssl s_client \
     ```
     > The Python application will be configured to use this `adsb2tak-service.key` file.
 ---
-## 3.5 Install the Aircraft Metadata Database
+## 3.5 ADSB2TAK Python Application
+<br>
+---
+## 3.6 Install the Aircraft Metadata Database
 <br>This database is used to enrich raw ADS-B data with details like aircraft type, operator, and military/civilian status.
 
 1. Navigate to the Database Directory:
