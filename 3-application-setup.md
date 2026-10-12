@@ -517,6 +517,8 @@ if __name__ == "__main__":
     main()
 ```
 
+Save the file and exit (Ctrl+X, then Y, then Enter).
+
 ---
 
 ## 3.6 Install the Aircraft Metadata Database
